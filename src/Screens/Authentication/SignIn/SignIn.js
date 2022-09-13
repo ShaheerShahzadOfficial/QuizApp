@@ -1,15 +1,21 @@
+import "./SignIn.css"
 import React, { useState } from 'react'
 import EmailSharpIcon from '@mui/icons-material/EmailSharp';
 import LockSharpIcon from '@mui/icons-material/LockSharp';
+import {useNavigate} from "react-router-dom"
+
 const SignIn = () => {
     const [Password, setPassword] = useState("")
     const [Email, setEmail] = useState("")
+    
+    const navigate = useNavigate()
+
     return (
         <div className='mainDiv'>
-            <div style={{ paddingTop: "5vmax" }} />
-            <div className='SignUpFormContainer'>
-                <h2>LogIn</h2>
 
+<div className='SignUpFormContainer'>
+                <h2>Login To Your Account</h2>
+<br />
                 <br />
                 <div>
                     <EmailSharpIcon />
@@ -23,19 +29,34 @@ const SignIn = () => {
                 </div>
 
 
+
                 <div className='btn'>
-            
-                    <button> Log In</button>
+                    {/* <ArrowForwardIcon /> */}
+                    <button> Login</button>
                 </div>
 
 
 
-
+<div className="Redirect">
+    <p style={{cursor:"pointer"}} onClick={()=> navigate("/")}> Don't have account!
+        <span>Register</span>
+    </p>
+</div>
 
 
             </div>
 
-            <div style={{ paddingTop: "5vmax" }} />
+
+
+
+<div className='left'>
+<div>
+<h1> Welcome Back! </h1>
+
+<h3>Login To Continue</h3>
+</div>
+</div>
+
         </div>
     )
 }

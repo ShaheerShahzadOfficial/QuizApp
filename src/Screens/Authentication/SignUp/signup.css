@@ -1,88 +1,197 @@
-.mainDiv{
-    background-color: #8BC6EC;
-    background-image: -webkit-linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
-    background-image: -moz-linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
-    background-image: -o-linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
-    background-image: linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
-    
-    
-height: auto;
-min-height: 100vmin;
-top: 0%;
+.mainDiv {
+  height: auto;
+  min-height: 80vmin;
+  margin-top: 10vmin !important;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 90%;
+  box-shadow: 24px 7px 20px 22px #aaa9a9;
+
 }
 
-.SignUpFormContainer{
-    background-color: white;
-    height: 80vmin;
-    width: 50%;
-    margin: auto;
-    border-radius: 50px;
+.SignUpFormContainer {
+  background-color: white;
+  height: 60vmin;
+    width: 60%;
+  margin: auto;
+  border-radius: 50px;
 }
-.SignUpFormContainer > h2{
-    text-align: center;
-    width: 24vmax;
-    color: #000000c0;
-    border-bottom: 3px solid #000000c0;
-    margin: auto;
-padding-top: 2vmax;
+.SignUpFormContainer > h2 {
+  text-align: center;
+  /* width: 24vmax; */
+  /* border-bottom: 3px solid #000000c0; */
+  font: bolder 3vmax cursive;
+  margin: auto;
+  padding-top: 1vmax;
+
+  background: #ff0000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .SignUpFormContainer > div {
-    margin: auto;
-    width: 90%;
+  margin: auto;
+  width: 90%;
 }
 
-.SignUpFormContainer > div > input{
-    padding: 1vmax 4vmax;
-    padding-right: 1vmax;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.267);
-    border-radius: 4px;
-    font: 600 1.2vmax "Roboto";
-    outline: none;
-    margin: auto;
+.SignUpFormContainer > div > input {
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 20px;
+  font: 900 1.4vmax "Roboto";
+  outline: none;
+  margin: auto;
+  -webkit-box-shadow: inset 0 0 10px #9599e2;
+  -moz-box-shadow: inset 0 0 10px #9599e2;
+  box-shadow: inset 0 0 10px #9599e2;
+  background: transparent;
+color: #0618a3;
 }
 
-.btn{
-    width: 80%;
-    margin: auto;
+.btn {
+  /* width: 40% !important; */
+  margin: auto;
 }
 .btn > button {
-    margin-bottom: 5vmax;
-    cursor: pointer;
-background-color: #4e57ff;
-    border: 2px solid #4e57ff;
-    border-radius: 0;
-padding:1vmax ;
-font: 500 1.5vmax "Roboto";
-color: rgb(255, 255, 255);
-width: 10vmax;
-margin: 2vmax auto;
-border-radius: 40px;
+  margin-bottom: 5vmax;
+  cursor: pointer;
+  background: #780206; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 2px solid #4e57ff;
+  border-radius: 0;
+  padding: 1vmax;
+  font: 500 1.5vmax "Roboto";
+  color: rgb(255, 255, 255);
+  width: 20vmax;
+  margin: 2vmax auto;
+  border-radius: 40px;
 }
 
-.btn > svg{
-    position: absolute;
-    font-size: 1.6vmax;
-    margin-top: 1vmax;
-    margin-left: 1vmax;
-    margin-bottom: 1vmax;
-    align-items: center;
-    color: rgb(255, 255, 255) !important;
+.btn > svg {
+  position: absolute;
+  font-size: 1.6vmax;
+  margin-top: 1vmax;
+  margin-left: 1vmax;
+  margin-bottom: 1vmax;
+  align-items: center;
+  color: linear-gradient(to right, #061161, #780206) !important;
+  background: #780206; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.SignUpFormContainer > div > svg{
-    position: absolute;
-    font-size: 1.6vmax;
-    margin-top: 1vmax;
-    margin-left: 1vmax;
-    margin-bottom: 1vmax;
-    align-items: center;
-    color: black;
+.SignUpFormContainer > div > svg {
+  position: absolute;
+  font-size: 1.6vmax;
+  margin-top: 1vmax;
+  margin-left: 1vmax;
+  margin-bottom: 1vmax;
+  align-items: center;
+  color: #780206;
+}
+
+.SignUpFormContainer > div > p {
+  color: #1f65e7;
+  font: bold 1.4vmax;
+}
+
+.left {
+  background: linear-gradient(to right, #061161, #780206);
+  width: 100%;
+  min-height: 80vmin;
+  height: auto;
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+
+.left > div{
+    top: 50%;
+    transform: translate(0%, 250%)
+
+}
+
+
+@media only screen and (max-width: 750px) {   
+    .mainDiv{
+        width: 95%;
+        grid-template-columns: 1.5fr 1fr;
+        height: auto;
+        min-height: 100vmin;
+    }
+    .SignUpFormContainer{
+        width: 80%;
+        height: 70vmin;
+    }
+    .left > div{
+        top: 50%;
+        transform: translate(0%, 100%)
+    
+    }
+    .btn > button{
+        width: 10vmax !important;
     }
 
-    .SignUpFormContainer > div > p{
-        color: #1f65e7;
-        font: bold 1.4vmax ;
+    .SignUpFormContainer > div {
+        margin: auto;
+        width: 90%;
+      }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .mainDiv{
+        width: 95%;
+        margin-top: 10vmin !important;
+        grid-template-columns: 1.5fr;
+        height: auto;
+        min-height: 120vmin;
     }
+    .SignUpFormContainer{
+        width: 100%;
+        height: 80vmin;
+    }
+    .SignUpFormContainer > h2 {
+        padding-top: -4% !important;
+    }
+    .left {
+        display:none;
+    }
+
+    .btn > button{
+        width: 15vmax !important;
+    }
+
+}
