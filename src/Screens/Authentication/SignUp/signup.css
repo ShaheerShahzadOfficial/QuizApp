@@ -1,0 +1,88 @@
+.mainDiv{
+    background-color: #8BC6EC;
+    background-image: -webkit-linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
+    background-image: -moz-linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
+    background-image: -o-linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
+    background-image: linear-gradient(29deg, #8BC6EC 0%, #9599E2 100%);
+    
+    
+height: auto;
+min-height: 100vmin;
+top: 0%;
+}
+
+.SignUpFormContainer{
+    background-color: white;
+    height: 80vmin;
+    width: 50%;
+    margin: auto;
+    border-radius: 50px;
+}
+.SignUpFormContainer > h2{
+    text-align: center;
+    width: 24vmax;
+    color: #000000c0;
+    border-bottom: 3px solid #000000c0;
+    margin: auto;
+padding-top: 2vmax;
+}
+
+.SignUpFormContainer > div {
+    margin: auto;
+    width: 90%;
+}
+
+.SignUpFormContainer > div > input{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 600 1.2vmax "Roboto";
+    outline: none;
+    margin: auto;
+}
+
+.btn{
+    width: 80%;
+    margin: auto;
+}
+.btn > button {
+    margin-bottom: 5vmax;
+    cursor: pointer;
+background-color: #4e57ff;
+    border: 2px solid #4e57ff;
+    border-radius: 0;
+padding:1vmax ;
+font: 500 1.5vmax "Roboto";
+color: rgb(255, 255, 255);
+width: 10vmax;
+margin: 2vmax auto;
+border-radius: 40px;
+}
+
+.btn > svg{
+    position: absolute;
+    font-size: 1.6vmax;
+    margin-top: 1vmax;
+    margin-left: 1vmax;
+    margin-bottom: 1vmax;
+    align-items: center;
+    color: rgb(255, 255, 255) !important;
+}
+
+.SignUpFormContainer > div > svg{
+    position: absolute;
+    font-size: 1.6vmax;
+    margin-top: 1vmax;
+    margin-left: 1vmax;
+    margin-bottom: 1vmax;
+    align-items: center;
+    color: black;
+    }
+
+    .SignUpFormContainer > div > p{
+        color: #1f65e7;
+        font: bold 1.4vmax ;
+    }
