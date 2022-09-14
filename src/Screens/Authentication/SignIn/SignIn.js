@@ -3,19 +3,40 @@ import React, { useState } from 'react'
 import EmailSharpIcon from '@mui/icons-material/EmailSharp';
 import LockSharpIcon from '@mui/icons-material/LockSharp';
 import {useNavigate} from "react-router-dom"
-
+import swal from "sweetalert";
+import {useDispatch,useSelector} from "react-redux"
+import { Login } from "../../../Redux/Actions/Auth";
 const SignIn = () => {
     const [Password, setPassword] = useState("")
     const [Email, setEmail] = useState("")
-    
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    const {user} = useSelector(state => state.Auth)
+
+    function login() {
+        if(Password && Email){
+            dispatch(Login(Email,Password))
+            if (user?.token) {
+                swal({
+                    text:"Login Successfull",
+                    icon:"success",
+                 })        
+                }
+        }else{
+         swal({
+            text:"Fill All The Field",
+            icon:"error",
+            buttons:"Sorry!",
+         })
+        }
+    }
     return (
         <div className='mainDiv'>
 
 <div className='SignUpFormContainer'>
                 <h2>Login To Your Account</h2>
-<br />
+                <br />
                 <br />
                 <div>
                     <EmailSharpIcon />
@@ -32,7 +53,7 @@ const SignIn = () => {
 
                 <div className='btn'>
                     {/* <ArrowForwardIcon /> */}
-                    <button> Login</button>
+                    <button onClick={login}> Login</button>
                 </div>
 
 

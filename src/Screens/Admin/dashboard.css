@@ -1,0 +1,52 @@
+.NavContainer{
+    display: grid;
+
+margin: 3vmax !important;
+    grid-template-columns: 4fr 1fr;
+    /* background-color: rgb(0, 2, 109); */
+}
+
+.NavContainer > div > button{
+    background-color: white;
+    border: 3px solid ;
+    color: rgb(0, 146, 61);
+padding: 1vmax;
+}
+
+.modal > div >  input{
+    color: white !important; 
+    background-color: rgba(0, 2, 109, 0.616);
+    border: 1px solid white;
+    display: block;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 1vmax !important;
+    padding: 1vmax;
+}
+
+.modal > div >input::placeholder{
+    color: white !important;
+}
+
+
+.modal > div >  button{
+    width: 10vmax;
+    padding: 1vmax;
+    margin: 1vmax;
+}
+
+select{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 1.5vmax cursive;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+option{
+color: black;}

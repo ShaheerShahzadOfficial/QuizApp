@@ -81,7 +81,7 @@ color: #0618a3;
     #061161,
     #780206
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border: 2px solid #4e57ff;
+  border: 2px solid transparent;
   border-radius: 0;
   padding: 1vmax;
   font: 500 1.5vmax "Roboto";
@@ -139,7 +139,7 @@ color: #0618a3;
 
 .left > div{
     top: 50%;
-    transform: translate(0%, 250%)
+    transform: translate(0%, 150%)
 
 }
 
@@ -157,7 +157,7 @@ color: #0618a3;
     }
     .left > div{
         top: 50%;
-        transform: translate(0%, 100%)
+        transform: translate(0%, 150%)
     
     }
     .btn > button{

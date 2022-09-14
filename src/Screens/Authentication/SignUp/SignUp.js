@@ -4,11 +4,48 @@ import FaceSharpIcon from '@mui/icons-material/FaceSharp';
 import EmailSharpIcon from '@mui/icons-material/EmailSharp';
 import LockSharpIcon from '@mui/icons-material/LockSharp';
 import {useNavigate} from "react-router-dom"
+import swal from 'sweetalert';
+import {useDispatch,useSelector} from "react-redux"
+import { Register } from "../../../Redux/Actions/Auth";
 const SignUp = () => {
     const [Name, setName] = useState("")
     const [Password, setPassword] = useState("")
     const [Email, setEmail] = useState("")
+
     const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+
+    const {isAuthenticated,error} = useSelector(state => state.Auth)
+
+function signup() {
+    if(Name && Password && Email){
+        dispatch(Register(Name,Email,Password)) 
+        if (isAuthenticated) {
+            swal({
+                text:"Registration Successfull",
+                icon:"success",
+             })        
+            }
+
+if (error?.msg === " User Already Exist with this Email ") {
+    swal({
+        text:"You Are Already Registered",
+        icon:"warning",
+     })   
+}
+
+
+    }else{
+     swal({
+        text:"Fill All The Field",
+        icon:"error",
+        buttons:"Sorry!",
+     })
+    }
+}
+
+
     return (
         <div className='mainDiv'>
             {/* <div style={{ paddingTop: "5vmax" }} /> */}
@@ -36,7 +73,7 @@ const SignUp = () => {
 
                 <div className='btn'>
                     {/* <ArrowForwardIcon /> */}
-                    <button> SignUp</button>
+                    <button onClick={signup}> SignUp</button>
                 </div>
 
 
