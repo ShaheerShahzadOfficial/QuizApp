@@ -13,7 +13,25 @@ margin: 3vmax !important;
 padding: 1vmax;
 }
 
-.modal > div >  input{
+.answerContainer{
+    justify-content: center;
+    display: flex;
+    /* margin: 2vmax auto; */
+    /* width: 80vw; */
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.answerContainer > input{
+    color: white !important; 
+    background-color: rgba(0, 2, 109, 0.616);
+    border: 1px solid white;
+    display: block;
+    margin: auto;
+    width: 40% !important;  
+    margin-bottom: 1vmax !important;
+    padding: 1vmax;
+}
+.QuizQuestion{
     color: white !important; 
     background-color: rgba(0, 2, 109, 0.616);
     border: 1px solid white;
@@ -24,7 +42,8 @@ padding: 1vmax;
     padding: 1vmax;
 }
 
-.modal > div >input::placeholder{
+.modal > div >input::placeholder,
+.answerContainer > input::placeholder{
     color: white !important;
 }
 
@@ -40,7 +59,7 @@ select{
     padding-right: 1vmax;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.267);
+    border: 1px solid transparent;
     border-radius: 4px;
     font: 300 1.5vmax cursive;
     outline: none;
