@@ -1,61 +1,51 @@
 import React from 'react'
-import { DataGrid } from '@mui/x-data-grid';
-
+import { Link } from 'react-router-dom'
+import "./home.css"
 const Home = () => {
 
-  const columns = [{ field: "id", headerName: "Test Id", minWidth: 300, flex: 1 },
-  {
-      field: "status",
-      headerName: "Status",
-      minWidth: 150,
-      flex: 0.5,
-      cellClassName: (params) => {
-          return params.getValue(params.id, "status") === " Passed"
-              ? "greenColor"
-              : "redColor";
-      },
-  },
-  {
-      field: "score",
-      headerName: "Marks",
-      type: "number",
-      minWidth: 150,
-      flex: 0.3,
-  },
 
-  {
-      field: "action",
-      headerName: "Actions",
-      type: "number",
-      minWidth: 150,
-      flex: 0.3,
-      sortable: false,
-      // renderCell: (params) => (
-          // <Link to={`/test/${user.name}/${params.getValue(params.id, "id")}`}>
-          //     <LaunchIcon color='black' fontSize='large' />
-     // </Link>
-      // )
-  },
-  ];
+    const subject = [
+        { Name: "HTML", Trainers: 4 },
+        { Name: "CSS", Trainers: 4 },
+        { Name: "JAVASCRIPT", Trainers: 4 },
+        { Name: "REACT JS", Trainers: 4 },
+        { Name: "NODE JS", Trainers: 4 }
 
-  const rows = [];
+    ]
 
+    return (
 
+        <div>
 
-  return (
-    <div>
-   
-    <DataGrid
-    rows={rows}
-    columns={columns}
-    pageSize={10}
-    disableSelectionOnClick
-    className="Student Dashboard"
-    autoHeight
-/>
+            <h1 className='Studentheading'>
+                WELCOME STUDENT
+            </h1>
 
-    </div>
-  )
+            <br />
+
+            <div className='Courses'>
+
+                {
+                    subject.map((item, i) => (
+                        <div key={item.Name}>
+                            
+                            <div style={{width:"90%",margin:"auto"}}>
+                            <h4 style={{ fontSize: "1.5rem", marginTop: 0, marginBottom: "0.5rem" }}>{item.Name}</h4>
+                            <h6 style={{ color: "#10266b", fontSize: "1.3rem", fontWeight: 500, lineHeight: 1 }}>{item.Trainers} Trainers</h6>
+                            <Link to={`/course/${item.Name}`}>
+                            <button style={{color: "#10266b",width:"100%", border:"2px solid #10266b",padding:"1vmax",margin:"auto",backgroundColor:"white",fontSize:"1.4rem",fontWeight:200}}>Join Test</button>
+                            </Link>
+                            </div>
+                            
+                            </div>
+                    ))
+                }
+
+            </div>
+
+        </div>
+
+    )
 }
 
 export default Home

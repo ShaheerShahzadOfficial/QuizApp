@@ -4,7 +4,6 @@ import { AllUser } from '../../Redux/Actions/SuperAdmin'
 import { DataGrid } from '@mui/x-data-grid';
 import { Box, Button, IconButton, Modal, Typography } from '@mui/material';
 import { Delete } from '@mui/icons-material';
-import CheckIcon from '@mui/icons-material/Check';
 
 const SuperAdminDashboard = () => {
     const [open, setOpen] = useState(false)
@@ -20,7 +19,7 @@ const SuperAdminDashboard = () => {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: 400,
+      width: "80%",
       bgcolor: 'rgb(0, 2, 109)',
       border: '2px solid transparent',
       boxShadow: 24,
@@ -32,7 +31,8 @@ const SuperAdminDashboard = () => {
     useEffect(() => {
 dispatch(AllUser())
     }, [dispatch])
-    const {user,error,loading} = useSelector(state => state.Users)
+    // ,error,loading
+    const {user} = useSelector(state => state.Users)
     console.log(user)
 
 
@@ -57,7 +57,10 @@ dispatch(AllUser())
         flex: 0.3,
         sortable: false,
         renderCell: (params) => (
-             <IconButton onClick={()=>alert(params.getValue(params.id, "id"))}>
+             <IconButton 
+             onClick={()=> setOpen(true)
+              // alert(params.getValue(params.id, "id"))
+             }>
              <Delete/>
              </IconButton>
         )
@@ -68,11 +71,12 @@ dispatch(AllUser())
 
 
 //     user && user?.Users?.map((item,i)=>(
-// rows.push({
-//   id:item._id,
-//   role:item.role,
-//   name:item.name
-// })   )
+rows.push({
+  id:"item._id",
+  role:"item.role",
+  name:"item.name"
+})   
+// )
 //      ) 
 
   return (
@@ -94,7 +98,7 @@ dispatch(AllUser())
 <br/>
 <div style={{width:"90%",margin:"auto" }}>
 
-<Button  variant="contained" color="success" onClick={ ()=> { setOpen(true) }}>Save</Button>
+{/* <Button  variant="contained" color="success" onClick={ ()=> { setOpen(true) }}>Save</Button> */}
 
 </div>
 <div>

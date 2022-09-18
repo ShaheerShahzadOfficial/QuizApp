@@ -1,0 +1,23 @@
+.TrainerContainer{
+    width: 80%;
+border: 2px solid;
+margin: auto;
+}
+
+.Trainer{
+    width: 96%;
+    background-color: #f4f4f4 !important;
+    color: #444 !important;
+    padding: 18px;
+    text-align: left;
+    border: none;
+}
+
+.Trainer > select{
+    width: 96%;
+    background-color: #f4f4f4 !important;
+    color: #444 !important;
+    padding: 18px;
+    text-align: left;
+    border: none;
+}

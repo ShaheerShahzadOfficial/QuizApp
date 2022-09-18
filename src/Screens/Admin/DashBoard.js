@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import "./dashboard.css"
-import { Button, IconButton, Modal, TextField, Typography } from '@mui/material';
+import { Button, IconButton, Modal, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import CheckIcon from '@mui/icons-material/Check';
 import { Delete } from '@mui/icons-material';
@@ -18,7 +18,7 @@ const [CorrectAnswer, setCorrectAnswer] = useState("")
 const [Batch, setBatch] = useState("")
 
 
-const [AnswerArray, setAnswerArray] = useState([Answer1,Answer2,Answer3,Answer4])
+// const [AnswerArray, setAnswerArray] = useState([Answer1,Answer2,Answer3,Answer4])
 const [category, setCategory] = useState("");
 
 
@@ -37,16 +37,13 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: "80%",
   bgcolor: 'rgb(0, 2, 109)',
   border: '2px solid transparent',
   boxShadow: 24,
   p: 4,
   color:"white"
 };
-
-
-
 
 
 const columns = [
@@ -85,7 +82,12 @@ const columns = [
   
     const rows = [];
 
-
+    rows.push({
+      id:"item._id",
+      role:"item.role",
+      name:"item.name"
+    })
+    
   return (
 
 <div>
@@ -116,7 +118,7 @@ Add Quiz Question
     
 
 
-    <select onChange={(e) => setCategory(e.target.value)}>
+    <select value={category} onChange={(e) => setCategory(e.target.value)}>
     <option value="">Choose Category</option>
     {categories.map((cate) => (
         <option key={cate} value={cate}>
