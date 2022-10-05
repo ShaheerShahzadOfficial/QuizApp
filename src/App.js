@@ -24,7 +24,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<SignUp />} />
-        <Route path="/login" element={<SignIn />} />
+        <Route  path="/login" element={<SignIn />} />
         <Route  path="/Student/Home" element={
         <ProtectedRoute isAuthenticated={isAuthenticated} user={user} isStudent={true}>
         <Home />

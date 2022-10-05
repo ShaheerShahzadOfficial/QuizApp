@@ -16,3 +16,9 @@ export const GET_ALL_USER_FAIL = "GET_ALL_USER_FAIL"
 export const LOAD_USER_REQUEST ="LOAD_USER_REQUEST"
 export const LOAD_USER = "LOAD_USER"
 export const LOAD_USER_FAIL = "LOAD_USER_FAIL"
+
+
+export const AddQuizQuestion = "AddQuizQuestion"
+
+export const SubmitQuizSuccess = "SubmitQuizSuccess"
+export const SubmitQuizFail = "SubmitQuizFail"
