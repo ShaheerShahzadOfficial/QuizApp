@@ -11,7 +11,8 @@ const AllUser = () => async (dispatch) => {
     }).then((result) => {
         dispatch({
             type: GET_ALL_USER,
-            payload: result.data
+            payload: result.data?.Users
+
         })
     }).catch((err) => {
         dispatch({

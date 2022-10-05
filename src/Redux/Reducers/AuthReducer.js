@@ -1,10 +1,11 @@
-import { LOGIN_USER, LOGIN_USER_FAIL, LOGOUT_USER, LOGOUT_USER_FAIL, REGISTER_USER, REGISTER_USER_FAIL, REGISTER_USER_REQUEST, LOGIN_USER_REQUEST } from "../Constants";
+import { LOGIN_USER, LOGIN_USER_FAIL, LOGOUT_USER, LOGOUT_USER_FAIL, REGISTER_USER, REGISTER_USER_FAIL, REGISTER_USER_REQUEST, LOGIN_USER_REQUEST, LOAD_USER_FAIL, LOAD_USER, LOAD_USER_REQUEST } from "../Constants";
 
 
 const initialState = {
     user: {},
     error: [],
-    message: {}
+    message: {},
+    msg:null
 }
 
 
@@ -13,19 +14,20 @@ export default function AuthReduers(state = initialState, actions) {
 
         case REGISTER_USER_REQUEST:
         case LOGIN_USER_REQUEST:
-        // case LOAD_USER_REQUEST:
+        case LOAD_USER_REQUEST:
             return {
                 loading: true
             }
 
         case LOGIN_USER:
         case REGISTER_USER:
-        // case LOAD_USER:
+        case LOAD_USER:
             return {
                 // ...state,
                 loading: false,
                 isAuthenticated: true,
-                user: actions.payload
+                user: actions.payload,
+                msg:actions.payload.msg
             }
 
 
@@ -49,13 +51,13 @@ export default function AuthReduers(state = initialState, actions) {
                 error: actions.payload
             }
 
-        // case LOAD_USER_FAIL:
-        //     return {
-        //         isAuthenticated: false,
-        //         loading: false,
-        //         user: null,
-        //         error: actions.payload
-        //     }
+        case LOAD_USER_FAIL:
+            return {
+                isAuthenticated: false,
+                loading: false,
+                user: null,
+                error: actions.payload
+            }
 
         case LOGOUT_USER_FAIL:
             return {
