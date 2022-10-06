@@ -6,7 +6,7 @@ const AllUser = () => async (dispatch) => {
         type: GET_ALL_USER_REQUEST
     })
 
-    await axios.get("http://localhost:4000/superAdmin/allUser", {
+    await axios.get("https://quizappbackendapi.herokuapp.com/superAdmin/allUser", {
         withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" }
     }).then((result) => {
         dispatch({

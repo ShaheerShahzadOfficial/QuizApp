@@ -4,7 +4,6 @@ import FaceSharpIcon from '@mui/icons-material/FaceSharp';
 import EmailSharpIcon from '@mui/icons-material/EmailSharp';
 import LockSharpIcon from '@mui/icons-material/LockSharp';
 import swal from 'sweetalert';
-import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
 import { Register } from '../../Redux/Actions/Auth';

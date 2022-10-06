@@ -86,7 +86,7 @@ const {user} = useSelector(state => state.Users)
       </IconButton>
 
       <IconButton onClick={()=>{
-          axios.delete(`http://localhost:4000/superAdmin/deleteUser/${params.getValue(params.id, "id")}`,
+          axios.delete(`https://quizappbackendapi.herokuapp.com/superAdmin/deleteUser/${params.getValue(params.id, "id")}`,
           { withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" } }).then((result) => {
             console.log(result?.data?.msg)
             swal({text:result?.data?.msg})
@@ -126,7 +126,7 @@ rows.push({
 
 
 const updateUser = () =>{
-  axios.put(`http://localhost:4000/superAdmin/updateUser/${Id}`,{
+  axios.put(`https://quizappbackendapi.herokuapp.com/superAdmin/updateUser/${Id}`,{
     AlowedToAttemptQuiz:Allowed,role
   },
   { withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" } }).then((result) => {
