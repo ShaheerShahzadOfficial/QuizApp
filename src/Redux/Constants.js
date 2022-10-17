@@ -22,3 +22,18 @@ export const AddQuizQuestion = "AddQuizQuestion"
 
 export const SubmitQuizSuccess = "SubmitQuizSuccess"
 export const SubmitQuizFail = "SubmitQuizFail"
+
+
+export const GET_KEY = "GET_KEY" 
+export const GET_KEY_FAIL="GET_KEY_FAIL"
+export const GET_KEY_REQUEST = "GET_KEY_REQUEST"
+
+
+export const ADD_KEY = "ADD_KEY" 
+export const ADD_KEY_FAIL="ADD_KEY_FAIL"
+export const ADD_KEY_REQUEST = "ADD_KEY_REQUEST"
+
+
+export const EDIT_KEY = "EDIT_KEY" 
+export const EDIT_KEY_FAIL="EDIT_KEY_FAIL"
+export const EDIT_KEY_REQUEST = "EDIT_KEY_REQUEST"

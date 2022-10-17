@@ -1,0 +1,33 @@
+.heading {
+    color: #10266b;
+    font: 50 2.5rem "Josefin-Sans-light";
+    border-bottom: 2px solid rgba(0, 0, 0, 0.788);
+    width: 80%;
+    margin: auto;
+    margin-top: 3vmax !important;
+    margin-bottom: 2vmax !important;
+    line-height: 1.2;
+  }
+
+  .KeyContainer{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .KeyInput{
+    width: 80%;
+    box-sizing: border-box;
+    padding: 1vmax;
+    font: 400 2vmax "Roboto";
+  }
+  .btn{
+    text-align: end;
+    width: 80%;
+    box-sizing: border-box;
+    justify-content: end;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: auto;
+  }

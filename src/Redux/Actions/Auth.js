@@ -8,7 +8,7 @@ const Register = (name, email, password) => async (dispatch) => {
 dispatch({
     type:REGISTER_USER_REQUEST
 })
-    await axios.post("https://quizappbackendapi.herokuapp.com/auth/register", {
+    await axios.post("http://localhost:4000/auth/register", {
         name, email, password
     }, { withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" } }).then((result) => {
         dispatch({
@@ -32,7 +32,7 @@ const Login = (email, password) => async (dispatch) => {
 
 
 
-    await axios.post("https://quizappbackendapi.herokuapp.com/auth/Login", {
+    await axios.post("http://localhost:4000/auth/Login", {
         email, password
     }, { withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" } }).then((result) => {
         dispatch({
@@ -56,7 +56,7 @@ const Logout = () => async (dispatch) => {
 
 
 
-    await axios.delete("https://quizappbackendapi.herokuapp.com/auth/logout", { withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" } }).then((result) => {
+    await axios.delete("http://localhost:4000/auth/logout", { withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" } }).then((result) => {
         dispatch({
             type: LOGOUT_USER,
             payload: result.data?.message
@@ -78,11 +78,12 @@ export const LoadUser = () => async (dispatch) => {
         dispatch({ type: LOAD_USER_REQUEST });
 
 
-        const { data } = await axios.get("https://quizappbackendapi.herokuapp.com/auth/userDetails", { withCredentials: true, credentials: "include" })
+        const { data } = await axios.get("http://localhost:4000/auth/userDetails", { withCredentials: true, credentials: "include" })
         dispatch({
             type: LOAD_USER,
             payload: data.user
         })
+
 
     } catch (error) {
         dispatch({

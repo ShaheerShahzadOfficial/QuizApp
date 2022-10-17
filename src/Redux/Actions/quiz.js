@@ -15,7 +15,7 @@ const SubmitQuiz = (Score, Course)=>(dispatch)=>{
 
 const quiz = localStorage.getItem('Quiz')? JSON.parse(localStorage.getItem('Quiz')): []
 
-axios.post("https://quizappbackendapi.herokuapp.com/quiz/submitCompleteQuiz",{quiz,Score,Course},{
+axios.post("http://localhost:4000/quiz/submitCompleteQuiz",{quiz,Score,Course},{
     withCredentials: true, credentials: "include", headers: { "Content-Type": "application/json" }
 }).then((result) => {
     dispatch({type:SubmitQuizSuccess})

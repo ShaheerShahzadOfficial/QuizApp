@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { LoadUser } from './Redux/Actions/Auth'
 import ProtectedRoute from "./Routes/ProtectedRoute"
+import Entry from './Screens/Student/EnterKey/Entry'
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.Auth)
 
@@ -25,13 +26,14 @@ function App() {
       <Routes>
         <Route exact path="/" element={<SignUp />} />
         <Route  path="/login" element={<SignIn />} />
-        <Route  path="/Student/Home" element={
+        <Route exact  path="/Student/Home" element={
         <ProtectedRoute isAuthenticated={isAuthenticated} user={user} isStudent={true}>
         <Home />
         </ProtectedRoute>} />
-        <Route path="/Admin/dashboard"  element={ <ProtectedRoute isAuthenticated={isAuthenticated} user={user} isAdmin={true}> <DashBoard /> </ProtectedRoute>} />
-        <Route path="/SuperAdmin/dashboard" element={<ProtectedRoute isAuthenticated={isAuthenticated} user={user} isSuperAdmin={true}> <SuperAdminDashboard /> </ProtectedRoute>} />
-        <Route path="/Student/StartQuiz/:name" element={<ProtectedRoute isAuthenticated={isAuthenticated} user={user} isStudent={true}> <Name /> </ProtectedRoute>} />
+        <Route exact path="/Admin/dashboard"  element={ <ProtectedRoute isAuthenticated={isAuthenticated} user={user} isAdmin={true}> <DashBoard /> </ProtectedRoute>} />
+        <Route exact path="/SuperAdmin/dashboard" element={<ProtectedRoute isAuthenticated={isAuthenticated} user={user} isSuperAdmin={true}> <SuperAdminDashboard /> </ProtectedRoute>} />
+        <Route exact path="/Student/StartQuiz/:name" element={<ProtectedRoute isAuthenticated={isAuthenticated} user={user} isStudent={true}> <Name /> </ProtectedRoute>} />
+      <Route exact path='/Student/EnterKey/:name'  element={<Entry />} />
       </Routes>
     </BrowserRouter>
   )

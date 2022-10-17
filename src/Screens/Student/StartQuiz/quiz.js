@@ -27,7 +27,7 @@ const {success} = useSelector(state => state.submit)
 
   useEffect(() => {
     axios
-      .get(`https://quizappbackendapi.herokuapp.com/quiz/getQuizByCategories/${name}`, {
+      .get(`http://localhost:4000/quiz/getQuizByCategories/${name}`, {
         withCredentials: true,
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

@@ -24,7 +24,7 @@ const DashBoard = () => {
 
   useEffect(() => {
 
-    axios.get("https://quizappbackendapi.herokuapp.com/quiz/getQuiz").then((result) => {
+    axios.get("http://localhost:4000/quiz/getQuiz").then((result) => {
       setQuiz(result?.data?.quiz)
     }).catch((err) => {
       console.log(err?.response?.data)
@@ -62,13 +62,13 @@ const DashBoard = () => {
   const addQuiz = () => {
 
 if (Question && Answer1 && Answer2 && Answer3 && Answer4 && CorrectAnswer  && Time && category) {
-    axios.post("https://quizappbackendapi.herokuapp.com/quiz/AddQuiz ", {
+    axios.post("http://localhost:4000/quiz/AddQuiz ", {
       "question": Question, "option": [Answer1, Answer2, Answer3, Answer4],
       "CorrectAnswer": CorrectAnswer, "course": category, "time": Time
     }).then((result) => { 
         swal({text:"Question Has been Created"})
         setOpen(false)
-        axios.get("https://quizappbackendapi.herokuapp.com/quiz/getQuiz").then((result) => {
+        axios.get("http://localhost:4000/quiz/getQuiz").then((result) => {
           setQuiz(result?.data?.quiz)
         }).catch((err) => {
           console.log(err?.response?.data)
@@ -118,9 +118,9 @@ if (Question && Answer1 && Answer2 && Answer3 && Answer4 && CorrectAnswer  && Ti
       sortable: false,
       renderCell: (params) => (
         <IconButton onClick={() =>{ 
-          axios.delete(`https://quizappbackendapi.herokuapp.com/quiz/deleteQuiz/${params.getValue(params.id, "id")}`).then((result) => {
+          axios.delete(`http://localhost:4000/quiz/deleteQuiz/${params.getValue(params.id, "id")}`).then((result) => {
             swal({text:result?.data?.msg})
-            axios.get("https://quizappbackendapi.herokuapp.com/quiz/getQuiz").then((result) => {
+            axios.get("http://localhost:4000/quiz/getQuiz").then((result) => {
               setQuiz(result?.data?.quiz)
             })
           }).catch((err) => {
